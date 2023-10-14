@@ -1,9 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ThemeService } from './core/services/theme.service';
 
 @Component({
   selector: 'app-root',
-  template: `<div>Tobi</div>`,
+  templateUrl: 'app.component.html',
 })
 export class AppComponent {
-
+  constructor(private themeService: ThemeService) {
+    // Load Color Scheme
+    this.themeService.load();
+}
 }

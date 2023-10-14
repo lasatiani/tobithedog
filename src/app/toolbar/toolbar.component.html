@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <h1>Tobiko</h1>
+    <mat-slide-toggle
+      [checked]="this.colorSchemeService.currentActive() === 'dark'"
+      (change)="setTheme()">DONT CLICK
+    </mat-slide-toggle>
+  </mat-toolbar-row>
+</mat-toolbar>
