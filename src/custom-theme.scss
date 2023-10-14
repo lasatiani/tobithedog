@@ -7,7 +7,16 @@
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat.core();
+// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
+//  The following line adds:
+//    1. Default typography styles for all components
+//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
+//  If you specify typography styles for the components you use elsewhere, you should delete this line.
+//  If you don't need the default component typographies but still want the hierarchy styles,
+//  you can delete this line and instead use:
+//    `@include mat.legacy-typography-hierarchy(mat.define-legacy-typography-config());`
+@include mat.all-legacy-component-typographies();
+@include mat.legacy-core();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -31,7 +40,7 @@ $angular-basic-theme: mat.define-light-theme((
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($angular-basic-theme);
+@include mat.all-legacy-component-themes($angular-basic-theme);
 
 // Define a light theme
 $light-primary: mat.define-palette(mat.$indigo-palette);
@@ -58,13 +67,13 @@ $dark-theme: mat.define-dark-theme(
 );
 
 .color-scheme-dark {
-  @include mat.core-color($dark-theme);
-  @include mat.button-color($dark-theme);
+  @include mat.legacy-core-color($dark-theme);
+  @include mat.legacy-button-color($dark-theme);
   @include mat.icon-color($dark-theme);
-  @include mat.list-color($dark-theme);
+  @include mat.legacy-list-color($dark-theme);
   @include mat.sidenav-color($dark-theme);
   @include mat.toolbar-color($dark-theme);
-  @include mat.card-color($dark-theme);
+  @include mat.legacy-card-color($dark-theme);
   // Example how you can easy add own custom styles
   .card-wrapper {
     color: #d0d0d0;
@@ -72,13 +81,13 @@ $dark-theme: mat.define-dark-theme(
 }
 
 .color-scheme-light {
-  @include mat.core-color($light-theme);
-  @include mat.button-color($light-theme);
+  @include mat.legacy-core-color($light-theme);
+  @include mat.legacy-button-color($light-theme);
   @include mat.icon-color($light-theme);
-  @include mat.list-color($light-theme);
+  @include mat.legacy-list-color($light-theme);
   @include mat.sidenav-color($light-theme);
   @include mat.toolbar-color($light-theme);
-  @include mat.card-color($light-theme);
+  @include mat.legacy-card-color($light-theme);
   // Example how you can easy add own custom styles
   .card-wrapper {
     color: #2d2d2d;
