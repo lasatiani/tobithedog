@@ -1,0 +1,4 @@
+<div *ngFor="let match of padelMatches">
+<div>{{match.date}}</div>
+<a [routerLink]="['/padel', match.id]">{{match.location}}</a>
+</div>

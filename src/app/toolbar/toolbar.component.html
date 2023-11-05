@@ -2,6 +2,7 @@
   <mat-toolbar-row>
     <h1>Tobiko</h1>
     <mat-slide-toggle
+      #darkModeSwitch
       [checked]="this.colorSchemeService.currentActive() === 'dark'"
       (change)="setTheme()">DONT CLICK
     </mat-slide-toggle>

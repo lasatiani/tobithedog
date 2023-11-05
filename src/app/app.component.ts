@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { ThemeService } from './core/services/theme.service';
 
 @Component({

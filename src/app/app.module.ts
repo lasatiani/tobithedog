@@ -5,11 +5,16 @@ import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatLegacySlideToggleModule as MatSlideToggleModule} from '@angular/material/legacy-slide-toggle';
+import { MatSlideToggleModule as MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import { FooterComponent } from './footer/footer.component';
+import { PadelModule } from "./padel/padel.module";
 
 @NgModule({
-  declarations: [AppComponent, ToolbarComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, MatToolbarModule, MatSlideToggleModule],
+  declarations: [AppComponent, ToolbarComponent, HomeComponent, FooterComponent],
+  imports: [BrowserModule, BrowserAnimationsModule, MatToolbarModule, MatSlideToggleModule, AppRoutingModule, RouterModule, PadelModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
